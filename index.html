@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark_Light Theme Switcher</title>
+    <style>
+        .container{
+            width: 300px;
+            display: block;
+            margin: auto;
+        }
+        
+        .img-container{
+            height: 100px;
+            cursor: pointer;
+            width: 100px;
+            margin-left: 10px;
+        }
+        .active{
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 5px;
+            padding: 5px;
+
+        }
+        .themedark{
+            background-color: black;
+            color: white;
+        }
+        .themelight{
+            background-color:orange;
+            color:black;
+        }
+        .heading{
+            
+            text-align: center;
+            font-size: 40px;
+        }
+
+    </style>
+</head>
+<body id="body">
+    <h1 class="heading">Light_Dark Theme Switcher</h1>
+    <div class="container">
+        <img src="moon.png" class="img-container" id="dark" onclick="darktheme()"/>
+        <img src="sun.png" class="img-container" id="light" onclick="lighttheme()"/>
+</div>
+   <script>
+    function darktheme()
+    {
+        const dark = document.getElementById("dark");
+        dark.classList.add("active");
+
+        const light = document.getElementById("light");
+        light.classList.remove("active");
+
+        const bodyElement = document.getElementById("body");
+        bodyElement.className = 'themedark';
+
+    }
+    function lighttheme()
+    {
+        const light=document.getElementById("light");
+        light.classList.add("active");
+
+        const dark=document.getElementById("dark");
+        dark.classList.remove("active");
+
+        const bodyElement=document.getElementById("body");
+        bodyElement.className ='themelight';
+    }
+
+   </script> 
+</body>
+</html>
